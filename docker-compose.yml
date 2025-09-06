@@ -11,7 +11,7 @@ services:
       - "27018:27017"
     volumes:
       - mongodb_data:/data/db
-      - ./mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+      - ./config/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
     networks:
       - bitskins_network
 
@@ -29,7 +29,7 @@ services:
       - ./logs:/app/logs
     networks:
       - bitskins_network
-    command: ["python", "bitskins_listed_bot.py"]
+    command: ["python", "bots/listed/listed_bot.py"]
 
   bitskins_price_changed_bot:
     build: .
@@ -45,7 +45,7 @@ services:
       - ./logs:/app/logs
     networks:
       - bitskins_network
-    command: ["python", "bitskins_price_changed_bot.py"]
+    command: ["python", "bots/price_changed/price_changed_bot.py"]
 
   bitskins_delisted_sold_bot:
     build: .
@@ -61,7 +61,7 @@ services:
       - ./logs:/app/logs
     networks:
       - bitskins_network
-    command: ["python", "bitskins_delisted_sold_bot.py"]
+    command: ["python", "bots/delisted_sold/delisted_sold_bot.py"]
 
   # Optional: MongoDB Web UI
   mongo_express:
