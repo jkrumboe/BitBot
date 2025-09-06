@@ -1,0 +1,90 @@
+services:
+  mongodb:
+    image: mongo:7.0
+    container_name: bitskins_mongodb
+    restart: unless-stopped
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: password123
+      MONGO_INITDB_DATABASE: bitskins_bot
+    ports:
+      - "27018:27017"
+    volumes:
+      - mongodb_data:/data/db
+      - ./mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+    networks:
+      - bitskins_network
+
+  bitskins_listed_bot:
+    build: .
+    container_name: bitskins_listed_bot
+    restart: unless-stopped
+    depends_on:
+      - mongodb
+    environment:
+      - MONGODB_URI=mongodb://admin:password123@mongodb:27017/bitskins_bot?authSource=admin
+      - DATABASE_NAME=bitskins_bot
+      - BITSKINS_API_KEY=${BITSKINS_API_KEY}
+    volumes:
+      - ./logs:/app/logs
+    networks:
+      - bitskins_network
+    command: ["python", "bitskins_listed_bot.py"]
+
+  bitskins_price_changed_bot:
+    build: .
+    container_name: bitskins_price_changed_bot
+    restart: unless-stopped
+    depends_on:
+      - mongodb
+    environment:
+      - MONGODB_URI=mongodb://admin:password123@mongodb:27017/bitskins_bot?authSource=admin
+      - DATABASE_NAME=bitskins_bot
+      - BITSKINS_API_KEY=${BITSKINS_API_KEY}
+    volumes:
+      - ./logs:/app/logs
+    networks:
+      - bitskins_network
+    command: ["python", "bitskins_price_changed_bot.py"]
+
+  bitskins_delisted_sold_bot:
+    build: .
+    container_name: bitskins_delisted_sold_bot
+    restart: unless-stopped
+    depends_on:
+      - mongodb
+    environment:
+      - MONGODB_URI=mongodb://admin:password123@mongodb:27017/bitskins_bot?authSource=admin
+      - DATABASE_NAME=bitskins_bot
+      - BITSKINS_API_KEY=${BITSKINS_API_KEY}
+    volumes:
+      - ./logs:/app/logs
+    networks:
+      - bitskins_network
+    command: ["python", "bitskins_delisted_sold_bot.py"]
+
+  # Optional: MongoDB Web UI
+  mongo_express:
+    image: mongo-express:1.0.0
+    container_name: bitskins_mongo_express
+    restart: unless-stopped
+    depends_on:
+      - mongodb
+    ports:
+      - "8082:8081"
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: admin
+      ME_CONFIG_MONGODB_ADMINPASSWORD: password123
+      ME_CONFIG_MONGODB_URL: mongodb://admin:password123@mongodb:27017/
+      ME_CONFIG_BASICAUTH: false
+      ME_CONFIG_BASICAUTH_USERNAME: ""
+      ME_CONFIG_BASICAUTH_PASSWORD: ""
+    networks:
+      - bitskins_network
+
+volumes:
+  mongodb_data:
+
+networks:
+  bitskins_network:
+    driver: bridge

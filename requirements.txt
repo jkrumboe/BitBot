@@ -1,0 +1,11 @@
+asyncio
+websockets==12.0
+pymongo==4.6.1
+python-dotenv==1.0.0
+requests==2.31.0
+
+# Analytics and Visualization Dependencies
+pandas==2.1.4
+matplotlib==3.8.2
+seaborn==0.13.0
+numpy==1.26.2
