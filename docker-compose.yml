@@ -89,7 +89,7 @@ services:
     container_name: bitskins_dashboard_api
     restart: unless-stopped
     ports:
-      - "5000:5000"
+      - "5001:5001"
     environment:
       MONGODB_URI: mongodb://admin:password123@mongodb:27017/bitskins_bot?authSource=admin
     depends_on:

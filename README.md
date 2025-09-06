@@ -37,7 +37,7 @@ A comprehensive suite of bots and analytics tools for monitoring BitSkins market
 
 3. **Access dashboard:**
    - Open: http://localhost:3001
-   - API: http://localhost:5000
+   - API: http://localhost:5001
 
 ### Option 2: Complete Suite with Docker
 
@@ -49,7 +49,7 @@ A comprehensive suite of bots and analytics tools for monitoring BitSkins market
 2. **Access services:**
    - Dashboard: http://localhost:3001
    - MongoDB Admin: http://localhost:8081
-   - API: http://localhost:5000
+   - API: http://localhost:5001
 
 ## Architecture
 
@@ -121,7 +121,7 @@ The system stores data in MongoDB collections:
 ### Default Settings
 - MongoDB: `localhost:27018`
 - Dashboard: `localhost:3001`
-- API: `localhost:5000`
+- API: `localhost:5001`
 - MongoDB Admin: `localhost:8081`
 
 ## Scripts

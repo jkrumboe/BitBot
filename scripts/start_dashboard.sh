@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "Starting BitBot Dashboard..."
+echo "Starting Biecho "API: http://localhost:5001/api/dashboard"Bot Dashboard..."
 echo
 
 echo "Installing Python API dependencies..."
@@ -28,7 +28,7 @@ REACT_PID=$!
 echo
 echo "Dashboard should be available at:"
 echo "Frontend: http://localhost:3001"
-echo "API: http://localhost:5000/api/dashboard"
+echo "API: http://localhost:5001/api/dashboard"
 echo
 echo "Press Ctrl+C to stop all services"
 

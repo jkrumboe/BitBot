@@ -628,7 +628,7 @@ def health_check():
 if __name__ == '__main__':
     print("🚀 Starting BitBot Dashboard API...")
     print("📊 Dashboard will be available at: http://localhost:3001")
-    print("🔧 API endpoints available at: http://localhost:5000/api/*")
+    print("🔧 API endpoints available at: http://localhost:5001/api/*")
     print("=" * 60)
     
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    app.run(debug=True, host='0.0.0.0', port=5001)

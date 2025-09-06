@@ -36,7 +36,7 @@ A real-time React-based dashboard for visualizing BitSkins market data and gener
 
 2. **Access the dashboard:**
    - Frontend: http://localhost:3000
-   - API: http://localhost:5000/api/dashboard
+   - API: http://localhost:5001/api/dashboard
 
 ### Method 2: Docker (Recommended for production)
 
@@ -47,7 +47,7 @@ A real-time React-based dashboard for visualizing BitSkins market data and gener
 
 2. **Access the dashboard:**
    - Frontend: http://localhost:3000
-   - API: http://localhost:5000/api/dashboard
+   - API: http://localhost:5001/api/dashboard
 
 ## Dashboard Components
 
@@ -83,7 +83,7 @@ A real-time React-based dashboard for visualizing BitSkins market data and gener
 ```
 ┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
 │   React App     │    │   Flask API     │    │   MongoDB       │
-│   (Port 3000)   │◄──►│   (Port 5000)   │◄──►│   (Port 27018)  │
+│   (Port 3000)   │◄──►│   (Port 5001)   │◄──►│   (Port 27018)  │
 │                 │    │                 │    │                 │
 │ - Dashboard UI  │    │ - Data API      │    │ - Collections:  │
 │ - Charts        │    │ - Report Gen    │    │   • listed_items│
@@ -162,7 +162,7 @@ The dashboard uses the following environment variables:
 
 1. **Dashboard shows "Offline" status:**
    - Check if MongoDB is running
-   - Verify API server is running on port 5000
+   - Verify API server is running on port 5001
    - Check network connectivity between services
 
 2. **No data in charts:**

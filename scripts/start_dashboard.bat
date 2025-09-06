@@ -25,5 +25,5 @@ call npm start
 echo.
 echo Dashboard should be available at:
 echo Frontend: http://localhost:3001
-echo API: http://localhost:5000/api/dashboard
+echo API: http://localhost:5001/api/dashboard
 pause
