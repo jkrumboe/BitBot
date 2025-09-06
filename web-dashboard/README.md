@@ -83,7 +83,7 @@ A real-time React-based dashboard for visualizing BitSkins market data and gener
 ```
 ┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
 │   React App     │    │   Flask API     │    │   MongoDB       │
-│   (Port 3000)   │◄──►│   (Port 5001)   │◄──►│   (Port 27018)  │
+│   (Port 3000)   │◄──►│   (Port 5001)   │◄──►│   (Port 27019)  │
 │                 │    │                 │    │                 │
 │ - Dashboard UI  │    │ - Data API      │    │ - Collections:  │
 │ - Charts        │    │ - Report Gen    │    │   • listed_items│
@@ -136,7 +136,7 @@ A real-time React-based dashboard for visualizing BitSkins market data and gener
 
 The dashboard uses the following environment variables:
 
-- `MONGODB_URI`: MongoDB connection string (default: `mongodb://admin:password123@localhost:27018/bitskins_bot?authSource=admin`)
+- `MONGODB_URI`: MongoDB connection string (default: `mongodb://admin:password123@localhost:27019/bitskins_bot?authSource=admin`)
 - `BITSKINS_API_KEY`: BitSkins API key (optional, for demo mode warning)
 
 ## Customization

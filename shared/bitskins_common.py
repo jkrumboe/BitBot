@@ -18,7 +18,7 @@ class BitSkinsConfig:
     
     def __init__(self):
         self.api_key = os.getenv('BITSKINS_API_KEY')
-        self.mongodb_uri = os.getenv('MONGODB_URI', 'mongodb://admin:password123@localhost:27018/bitskins_bot?authSource=admin')
+        self.mongodb_uri = os.getenv('MONGODB_URI', 'mongodb://admin:password123@localhost:27019/bitskins_bot?authSource=admin')
         self.database_name = os.getenv('DATABASE_NAME', 'bitskins_bot')
         self.websocket_url = "wss://ws.bitskins.com"
         self.api_base_url = "https://api.bitskins.com"

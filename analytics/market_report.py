@@ -30,7 +30,7 @@ plt.rcParams['ytick.labelsize'] = 9
 class BitSkinsMarketReport:
     def __init__(self):
         # Connect to MongoDB
-        self.mongodb_uri = "mongodb://admin:password123@localhost:27018/bitskins_bot?authSource=admin"
+        self.mongodb_uri = "mongodb://admin:password123@localhost:27019/bitskins_bot?authSource=admin"
         self.client = MongoClient(self.mongodb_uri)
         self.db = self.client['bitskins_bot']
         

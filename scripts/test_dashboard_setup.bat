@@ -24,7 +24,7 @@ echo ✓ Python is installed
 echo.
 echo Checking if MongoDB is accessible...
 cd /d "%~dp0\..\api"
-python -c "from pymongo import MongoClient; MongoClient('mongodb://admin:password123@localhost:27018/bitskins_bot?authSource=admin').admin.command('ping')" >nul 2>&1
+python -c "from pymongo import MongoClient; MongoClient('mongodb://admin:password123@localhost:27019/bitskins_bot?authSource=admin').admin.command('ping')" >nul 2>&1
 if %errorlevel% neq 0 (
     echo WARNING: MongoDB is not accessible. Please start MongoDB with docker-compose up -d mongodb
     echo You can still test the dashboard, but it will show empty data.

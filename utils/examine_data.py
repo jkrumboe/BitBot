@@ -8,7 +8,7 @@ import pandas as pd
 
 def examine_data_structure():
     # Connect to MongoDB
-    mongodb_uri = "mongodb://admin:password123@localhost:27018/bitskins_bot?authSource=admin"
+    mongodb_uri = "mongodb://admin:password123@localhost:27019/bitskins_bot?authSource=admin"
     client = MongoClient(mongodb_uri)
     db = client['bitskins_bot']
     

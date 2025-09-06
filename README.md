@@ -48,7 +48,7 @@ A comprehensive suite of bots and analytics tools for monitoring BitSkins market
 
 2. **Access services:**
    - Dashboard: http://localhost:3001
-   - MongoDB Admin: http://localhost:8081
+   - MongoDB Admin: http://localhost:8090
    - API: http://localhost:5001
 
 ## Architecture
@@ -119,10 +119,10 @@ The system stores data in MongoDB collections:
 - `DATABASE_NAME` - Database name (default: `bitskins_bot`)
 
 ### Default Settings
-- MongoDB: `localhost:27018`
+- MongoDB: `localhost:27019`
 - Dashboard: `localhost:3001`
 - API: `localhost:5001`
-- MongoDB Admin: `localhost:8081`
+- MongoDB Admin: `localhost:8090`
 
 ## Scripts
 
