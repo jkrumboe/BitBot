@@ -1,0 +1,22 @@
+# Dockerfile for Dashboard API
+FROM python:3.11-slim
+
+WORKDIR /app
+
+# Copy requirements and install dependencies
+COPY api/requirements.txt /app/
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy the application code
+COPY api/ /app/api/
+COPY shared/ /app/shared/
+COPY analytics/ /app/analytics/
+
+# Set Python path to include shared modules
+ENV PYTHONPATH=/app
+
+# Expose port
+EXPOSE 5000
+
+# Run the application
+CMD ["python", "api/dashboard_api.py"]
